@@ -38,14 +38,13 @@ In our implementation, we check if the operation was canceled. If not, we extrac
 
 **The "Good" Answer:**
 `dnd-kit` is built for modern React (hooks-based), is modular (unbundled it's very small), and supports multiple input methods like touch and mouse out-of-the-box. Unlike older libraries, it doesn't force a specific DOM structure, giving us full control over our CSS and layout.
+
 ---
 
 ### Question 5: How do you implement a Kanban board with multiple columns using `dnd-kit`?
 
 **The "Good" Answer:**
 In a Kanban system, we map over a list of columns (e.g., To-Do, In Progress, Done). Each column is a **Droppable** container. Inside each column, we filter our global tasks array by their `status` and render them as **Draggable** components. When `onDragEnd` is triggered, we simply update the `status` property of the dragged task to match the `id` of the droppable column it was landed in. This declarative approach ensures that React handles the actual movement of the element in the DOM.
-
----
 
 ---
 
